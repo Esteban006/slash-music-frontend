@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:slash_music_frontend/core/configs/theme/app_theme.dart';
-import 'package:slash_music_frontend/presentation/splash/pages/splash.dart';
+import 'presentation/user_profile/user_profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,9 +12,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Slash Music',
-      theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: const SplashPage(),
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        fontFamily: 'Roboto',
+      ),
+      home: const UserProfilePage(), // ← Aquí cargas la pantalla
     );
   }
 }

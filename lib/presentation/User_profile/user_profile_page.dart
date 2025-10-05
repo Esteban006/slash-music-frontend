@@ -6,85 +6,103 @@ class UserProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Mi Perfil"),
-        centerTitle: true,
-      ),
       body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
         child: Column(
           children: [
-            const SizedBox(height: 20),
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: NetworkImage("https://i.pravatar.cc/150?img=3"),
+            // Foto de perfil
+            const CircleAvatar(
+              radius: 60,
+              backgroundImage: NetworkImage('https://media.istockphoto.com/id/1319763895/es/foto/sonriente-raza-mixta-hombre-maduro-sobre-fondo-gris.jpg?s=612x612&w=0&k=20&c=sGBwMEZr8RdyFuOF0084teSTc1TwMzdpHjowP9QRWTw='),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 16),
+
+            // Nombre del usuario
             const Text(
-              "Esteban Balanta",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              'John Doe',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            const Text("esteban@example.com"),
-            const SizedBox(height: 20),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                _StatWidget(label: "Playlists", value: "12"),
-                _StatWidget(label: "Seguidores", value: "230"),
-                _StatWidget(label: "Escuchadas", value: "540"),
-              ],
+            const SizedBox(height: 8),
+
+            // Bio o descripción
+            const Text(
+              'Lover of indie and lo-fi. Music is my escape.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 14, color: Colors.grey),
             ),
-            const SizedBox(height: 20),
 
-            Container(
+            const SizedBox(height: 32),
+
+            // Título sección
+            const Align(
               alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.all(16),
-              child: const Text(
-                "Mis Playlists",
+              child: Text(
+                'My Playlist',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
+
+            const SizedBox(height: 16),
+
+            // Lista de canciones recientes
             ListTile(
-              leading: const Icon(Icons.music_note),
-              title: const Text("Lo-Fi Vibes"),
-              subtitle: const Text("24 canciones"),
-              trailing: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                onPressed: () {},
-              ),
+              leading: const Icon(Icons.music_note, color: Colors.green),
+              title: const Text('Lovely'),
+              subtitle: const Text('Billie Eilish'),
+              trailing: const Text('3:21'),
             ),
             ListTile(
-              leading: const Icon(Icons.music_note),
-              title: const Text("Rock 2000s"),
-              subtitle: const Text("50 canciones"),
-              trailing: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                onPressed: () {},
-              ),
+              leading: const Icon(Icons.music_note, color: Colors.green),
+              title: const Text('Happier Than Ever'),
+              subtitle: const Text('Billie Eilish'),
+              trailing: const Text('4:58'),
             ),
+            ListTile(
+              leading: const Icon(Icons.music_note, color: Colors.green),
+              title: const Text('When the Party’s Over'),
+              subtitle: const Text('Billie Eilish'),
+              trailing: const Text('3:16'),
+            ),
+               ListTile(
+              leading: const Icon(Icons.music_note, color: Colors.green),
+              title: const Text('Lovely'),
+              subtitle: const Text('Billie Eilish'),
+              trailing: const Text('3:21'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.music_note, color: Colors.green),
+              title: const Text('Happier Than Ever'),
+              subtitle: const Text('Billie Eilish'),
+              trailing: const Text('4:58'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.music_note, color: Colors.green),
+              title: const Text('When the Party’s Over'),
+              subtitle: const Text('Billie Eilish'),
+              trailing: const Text('3:16'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.music_note, color: Colors.green),
+              title: const Text('Lovely'),
+              subtitle: const Text('Billie Eilish'),
+              trailing: const Text('3:21'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.music_note, color: Colors.green),
+              title: const Text('Happier Than Ever'),
+              subtitle: const Text('Billie Eilish'),
+              trailing: const Text('4:58'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.music_note, color: Colors.green),
+              title: const Text('When the Party’s Over'),
+              subtitle: const Text('Billie Eilish'),
+              trailing: const Text('3:16'),
+            )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.edit),
-      ),
-    );
-  }
-}
-
-class _StatWidget extends StatelessWidget {
-  final String label;
-  final String value;
-  const _StatWidget({required this.label, required this.value});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(value, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-        Text(label, style: const TextStyle(color: Colors.grey)),
-      ],
     );
   }
 }
